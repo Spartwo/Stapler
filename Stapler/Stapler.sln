@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stapler", "Source\Stapler.csproj", "{70D38878-43DB-4F6E-8002-45ADA5391AF7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2ED14E88-B9E3-4C39-823F-B091D42D0081}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{2E6A7FC2-286E-41AD-874B-A427B59AD3A8}"
+	ProjectSection(SolutionItems) = preProject
+		b9ps.md = b9ps.md
+		Docs\nodes.md = Docs\nodes.md
+		Docs\todo.md = Docs\todo.md
+		Docs\validator.md = Docs\validator.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GameData", "GameData", "{4197A090-B36D-4C2B-ACDD-1857FEBF0FD0}"
+	ProjectSection(SolutionItems) = preProject
+		GameData\999_Scale_Redist.version = GameData\999_Scale_Redist.version
+		GameData\TweakScale\TweakScale.version = GameData\TweakScale\TweakScale.version
+		GameData\TSSafetyNet\TweakScaleSafetyNet.version = GameData\TSSafetyNet\TweakScaleSafetyNet.version
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70D38878-43DB-4F6E-8002-45ADA5391AF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70D38878-43DB-4F6E-8002-45ADA5391AF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70D38878-43DB-4F6E-8002-45ADA5391AF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70D38878-43DB-4F6E-8002-45ADA5391AF7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2E6A7FC2-286E-41AD-874B-A427B59AD3A8} = {2ED14E88-B9E3-4C39-823F-B091D42D0081}
+		{4197A090-B36D-4C2B-ACDD-1857FEBF0FD0} = {2ED14E88-B9E3-4C39-823F-B091D42D0081}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F6D8B77D-2956-4865-AD3A-A6C55430E712}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.TextStylePolicy = $1
+		$1.FileWidth = 120
+		$1.NoTabsAfterNonTabs = True
+		$1.inheritsSet = VisualStudio
+		$1.inheritsScope = text/plain
+		$1.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $2
+		$2.AfterDelegateDeclarationParameterComma = True
+		$2.inheritsSet = Mono
+		$2.inheritsScope = text/x-csharp
+		$2.scope = text/x-csharp
+	EndGlobalSection
+EndGlobal
