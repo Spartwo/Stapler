@@ -1,1 +1,1 @@
-Stapler is a mod for KSP that adds a construction mode to the editor that lets you re-parent parts without changing their position.
+Stapler adds a construction mode to the editor that lets you re-parent parts without changing their position.
