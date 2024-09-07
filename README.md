@@ -15,6 +15,6 @@ OR
 
 -
 
-4. Attempt a build and everything should sort itself out. 
+4. Attempt a build and everything should sort itself out. Don't delete the missing reference to Assembly-CSharp, it's not actually missing.
 
 Recommend creating a symlink that points to `Stapler\GameData\Stapler` inside your `Kerbal Space Program\GameData` for faster development.
