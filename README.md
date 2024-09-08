@@ -1,5 +1,7 @@
 Stapler is a mod for Kerbal Space Program. It adds a construction mode to the editor that lets you re-parent parts without changing their position.
 
+This is a minimal remake of @Spartwo's Stapler mod that just allows you to-reparent parts in a stockalike way.
+
 # Build Instructions
 
 1. Open the solution.
