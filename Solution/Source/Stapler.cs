@@ -226,12 +226,10 @@ namespace Stapler
             st_parent_selectParent.OnUpdate = Combine(
                 EditorLogic.fetch.UndoRedoInputUpdate,
                 EditorLogic.fetch.snapInputUpdate,
-                EditorLogic.fetch.partSearchUpdate, () => { Debug.Log("st_parent_selectParent.OnUpdate"); } );
+                EditorLogic.fetch.partSearchUpdate);
 
             st_parent_selectParent.OnLeave = delegate (KFSMState to)
             {
-                Debug.Log("Stapler: st_parent_selectParent.OnLeave.");
-
                 // Clean up part selectors.
 
                 foreach (var selector in partSelectors)
@@ -285,6 +283,11 @@ namespace Stapler
             FSM.AddEvent(on_pickParent, st_parent_selectParent);
         }
 
+        public static float SqrDistance(Part part, Part other)
+        {
+            return Vector3.SqrMagnitude(part.transform.position - other.transform.position);
+        }
+
         private void OnParentSelect(Part newParent)
         {
             if (newParent == null || !editor.ship.Contains(newParent) || newParent == selectedPart || selectedPart.parent == null)
@@ -304,10 +307,20 @@ namespace Stapler
                 part.parent.removeChild(part);
                 EditorLogicBase.clearAttachNodes(part, part.parent);
 
-                part.setParent(newParent);
-                part.transform.SetParent(newParent.transform, true);
+                var localParent = newParent;
+                if (newParent.symmetryCounterparts.Count > 0)
+                {
+                    // If the new parent has symmetry counterparts, pick the closest one to us.
+                    // This is just a guess. I'll wait to see where it goes wrong.
+
+                    var newParentAndCounterParts = newParent.symmetryCounterparts.Concat(new[] { newParent });
+                    localParent = newParentAndCounterParts.OrderBy(p => SqrDistance(p, part)).First();
+                }
+
+                part.setParent(localParent);
+                part.transform.SetParent(localParent.transform, true);
                 part.attachMode = AttachModes.SRF_ATTACH;
-                part.onAttach(newParent);
+                part.onAttach(localParent);
             }
 
             // Play a sound and run the event that changes the state back to the start.
