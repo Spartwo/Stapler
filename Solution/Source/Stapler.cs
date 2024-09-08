@@ -358,6 +358,7 @@ namespace Stapler
             if (mode != reparentMode || FSM.CurrentState == st_parent_selectChild)
                 return;
 
+            editor.constructionMode = reparentMode;
             EditorLogic.fetch.fsm.RunEvent(on_goToModeParent);
         }
     }
