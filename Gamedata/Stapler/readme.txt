@@ -1,0 +1,1 @@
+Stapler adds a construction mode to the editor that lets you re-parent parts without changing their position.
